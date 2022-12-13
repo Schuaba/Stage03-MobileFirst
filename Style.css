@@ -1,0 +1,143 @@
+:root {
+  /*color*/
+  
+  --bg-color: hsl(233, 100%, 97%);
+  --bg-header: hsl(218, 17%, 62%);
+  --bg-h1bg: hsl(275, 18%, 79%);
+  --bg-font: hsl(312, 91%, 96%);
+  --fc-h2: hsl(232, 17%, 35%);
+  --fc-p: hsl(274, 84%, 12%);
+  
+  /*font*/
+  
+  font-size: 62.50%;
+  --ff-main: 'Staatliches', cursive;
+  --ff-p: 'Palanquin';
+  
+  --fs-h2: 2.0rem;
+  --lh-h2: 3.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.all {
+  margin: 0 auto;
+  max-width: 38.4rem;
+  }
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3.2rem 0 3.6rem;
+  gap: 4.0rem;
+}
+
+header:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 29.9rem;
+  top: 0;
+  background: var(--bg-header);
+  max-width: 38.4rem;
+  z-index: -1;
+}
+
+header h1 {
+  font-family: var(--ff-main);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-size: 4.0rem;
+  line-height: 3.4rem;
+  color: #ffffff;
+  position: relative;
+}
+
+header h1::before {
+  content: '';
+  position: absolute;
+  width: 38.4rem;
+  height: 4.9rem;
+  top: -0.8rem;
+  left: -8.9rem;
+  max-width: 38.4rem;
+  background: var(--bg-h1bg);
+  z-index: -1;
+}
+
+main .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3.2rem;
+  margin-bottom: 6.0rem;
+}
+
+.page p {
+  font-family: var(--ff-p);
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+  text-align: center;
+  margin-bottom: 6.3rem;
+  color: var(--fc-p);
+}
+
+.bundle {
+  position: relative;
+
+  animation: bottomtop 1.2s 200ms backwards ease;
+}
+
+.bundle + .bundle {
+  margin-top: 3.6rem;
+}
+
+.bundle h2 {
+  position: absolute;
+  font-family: var(--ff-main);
+  top: 1.7rem;
+  right: 1.7rem;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  color: var(--fc-h2);
+  letter-spacing: 0.05em;
+  background-color: var(--bg-font);
+  border-radius: 20px;  
+  padding: 1px 2.3rem;
+
+  animation: topbottom 1.2s 300ms backwards ease-out;
+}
+
+
+@keyframes topbottom{
+  0% {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomtop {
+  0% {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
